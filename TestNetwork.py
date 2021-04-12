@@ -11,7 +11,6 @@ s.close()
 
 MainNodeIP = "192.168.1.219"
 
-Connected = False
 
 node = ClientNode.ClientNode(ip, 10002, id)
 # node2 = ClientNode.ClientNode("127.0.0.1", 10002, id)
@@ -20,16 +19,10 @@ time.sleep(1)
 # Do not forget to start your node!
 node.start()
 # node2.start()
-time.sleep(1)
+time.sleep(5)
 
 # Connect with another node, otherwise you do not create any network!
-while Connected == False:
-    try:
-        node.connect_with_node(MainNodeIP, 10001)
-        Connected = True
-    except:
-        print("Trying to connect to " + MainNodeIP)
-        Connected = False
+node.connect_with_node(MainNodeIP, 10001)
 time.sleep(2)
 
 # Example of sending a message to the nodes (dict).
