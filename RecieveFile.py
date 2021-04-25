@@ -1,6 +1,6 @@
 import socket               # Import socket module
 
-def ReceiveFile(destination):
+def receiveFile(destination):
     s = socket.socket()         # Create a socket object
     host = socket.gethostname() # Get local machine name
     port = 12345                 # Reserve a port for your service.
