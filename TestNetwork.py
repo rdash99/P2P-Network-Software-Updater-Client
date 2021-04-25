@@ -2,6 +2,7 @@ import sys
 import time
 import ClientNode
 import socket
+import sendFile as sendFile
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect(("8.8.8.8", 80))
@@ -9,7 +10,7 @@ ip = s.getsockname()[0]
 id = socket.gethostname()
 s.close()
 
-MainNodeIP = "192.168.1.219"
+MainNodeIP = "10.10.2.192"
 
 
 node = ClientNode.ClientNode(ip, 10002, id)
@@ -27,6 +28,8 @@ time.sleep(2)
 
 # Example of sending a message to the nodes (dict).
 # node.send_to_nodes({"message": "Hi there!"})
+
+sendFile.sendFile('test.txt')
 
 time.sleep(5) # Create here your main loop of the application
 
