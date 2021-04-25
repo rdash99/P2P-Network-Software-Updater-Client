@@ -1,12 +1,12 @@
 import socket               # Import socket module
 
-def SendFile(filepath, Destination):
+def sendFile(filepath):
     s = socket.socket()         # Create a socket object
     host = socket.gethostname() # Get local machine name
     port = 12345                 # Reserve a port for your service.
 
     s.connect((host, port))
-    f = open('tosend.png','rb')
+    f = open(filepath,'rb')
     print ('Sending...')
     l = f.read(1024)
     while (l):
