@@ -20,14 +20,14 @@ time.sleep(1)
 # Do not forget to start your node!
 node.start()
 # node2.start()
-time.sleep(5)
+time.sleep(1)
 
 # Connect with another node, otherwise you do not create any network!
 node.connect_with_node(MainNodeIP, 10001)
 time.sleep(2)
 
 # Example of sending a message to the nodes (dict).
-# node.send_to_nodes({"message": "Hi there!"})
+node.send_to_nodes({"message": "Hi there!"})
 
 sendFile.sendFile('test.txt')
 
